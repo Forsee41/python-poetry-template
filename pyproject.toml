@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "Template Project"
+version = "0.1.0"
+description = ""
+authors = ["Forsee41 <forsee41@gmail.com>"]
+readme = "README.md"
+packages = [{include = "template"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.2"
+pre-commit = "^3.3.3"
+autoflake = "^2.1.1"
+black = "^23.3.0"
+isort = "^5.12.0"
+poethepoet = "^0.20.0"
+
+[tool.poe.tasks]
+test = "python -m pytest -v"
+run = "python -m template"
+
+[tool.flake8]
+max-line-length = 88 
+ignore = ['E203', 'W503']
+
+[tool.black]
+line-length = 88
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
